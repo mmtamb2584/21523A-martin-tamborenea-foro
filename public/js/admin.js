@@ -8,6 +8,7 @@ formGuardar.addEventListener('submit', async (e) => {
     // Se capturan los datos del formulario
     const titulo = document.querySelector('#titulo-post').value;
     const descripcion = document.querySelector('#detalle-post').value;
+    const autor = document.querySelector('#autor').value;
     const url_imagen = document.querySelector('#url-img').value;
     const fecha = document.querySelector('#fecha').value;
 
@@ -17,7 +18,7 @@ formGuardar.addEventListener('submit', async (e) => {
         headers: {
             'Content-Type':'application/json'
         },
-        body: JSON.stringify({ titulo, descripcion, url_imagen, fecha})
+        body: JSON.stringify({ titulo, descripcion, autor, url_imagen, fecha})
     })
     const data = await response.json();
 
